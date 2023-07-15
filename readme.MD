@@ -1,1 +1,2 @@
-# ReadMe
+# LeetCode
+Collection of LeetCode questions
