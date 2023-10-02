@@ -1,18 +1,28 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        l, r, count = 0, 0, 1
+        cur, nextPt = 1, 1
 
-        while r < len(nums):
-            if nums[l] < nums[r]:
-                l += 1
-                count += 1
-                nums[l] = nums[r]
-            r+=1
+        while nextPt < len(nums):
+            if nums[cur-1] == nums[nextPt]:
+                nextPt +=1 ## keep increasing to find out non duplicate values
+            else:
+                ### nums is unique, not duplicate
+                if nextPt != cur:
+                    ##reaplce
+                    nums[cur], nums[nextPt] = nums[nextPt], nums[cur]
+                
+                nextPt +=1
+                cur +=1
         
-        return count
+        return cur
+
+
+
+            
 
 
 
 
 
 
+        
